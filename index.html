@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baseball Cards</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        img {
+            width: auto;
+            height: 20vh;
+            margin: 1vw;
+        }
+    </style>
+</head>
+<body>
+<div id="gallery" class="gallery"></div>
+
+<script>
+    (function () {
+        function addingImages(gallery) {
+            for (var i = 1; i <= 87; i++) {
+                var url = "images/baseball-img-" + i + ".jpeg";
+                var a = document.createElement("a");
+                a.setAttribute('href', url);
+                var image = document.createElement("img");
+                image.setAttribute("src", url);
+                a.appendChild(image);
+                gallery.appendChild(a);
+            }
+        }
+        addingImages(document.getElementById('gallery'));
+    })();
+
+</script>
+</body>
+</html>
